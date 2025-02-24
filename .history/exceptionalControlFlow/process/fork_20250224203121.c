@@ -57,7 +57,7 @@ void fork2() {
   printf("L1\n");
   fork();
   printf("Bye\n");
-  fork
+  for
 }
 
 void fork3() {

@@ -7,6 +7,19 @@
     "wait.h": "c",
     "csapp.h": "c",
     "signal.h": "c",
-    "unistd.h": "c"
+    "unistd.h": "c",
+    "mman.h": "c",
+    "stat.h": "c",
+    "*.tcc": "c",
+    "exception": "c",
+    "memory_resource": "c",
+    "iosfwd": "c",
+    "new": "c",
+    "ostream": "c",
+    "shared_mutex": "c",
+    "sstream": "c",
+    "stop_token": "c",
+    "streambuf": "c",
+    "format": "c"
   }
 }

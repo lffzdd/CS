@@ -20,6 +20,9 @@
     "sstream": "c",
     "stop_token": "c",
     "streambuf": "c",
-    "format": "c"
+    "format": "c",
+    "uv.h": "c",
+    "netdb.h": "c",
+    "features.h": "c"
   }
 }

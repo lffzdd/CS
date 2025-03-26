@@ -4,6 +4,7 @@ int main(int argc, char const* argv[]) {
   struct stat stat;
   char* type, * readok;
 
+
   Stat(argv[1], &stat);
 
   if (S_ISREG(stat.st_mode))
@@ -20,4 +21,3 @@ int main(int argc, char const* argv[]) {
   printf("type: %s, read: %s\n", type, readok);
   return 0;
 }
-s

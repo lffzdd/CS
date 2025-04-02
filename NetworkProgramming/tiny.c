@@ -122,17 +122,28 @@ int parseUri(char* uri, char* filename, char* cgiArgs) {
         return 1;
     }
     else {  // 动态资源
-        char* start = strstr(uri, "?");
+        char* start = strchr(uri, '?');
         if (start) {
-            char* end = strstr(start, " ");
-            strncpy(cgiArgs, uri + 1, end - start - 1); // 要忽略"?"
+            char* end = strchr(start, ' ');
+            if (!end) {
+                // 如果格式错误，默认参数直到 URI 末尾
+                end = uri + strlen(uri);
+            }
+            strncpy(cgiArgs, start + 1, end - start - 1); // 要忽略"?"
+            // cgiArgs[end - (start + 1)] = '\0'; // 确保终止
+
+            // 截断 URI，保留 ? 前的部分
+            // *start = '\0';
         }
         else {
             strcpy(cgiArgs, "");
         }
 
+        *start = '\0'; // 将?替换为\0
         strcpy(filename, ".");
         strcat(filename, uri);
+
+        printf("parseUri: %s\n", cgiArgs);
         return 0;
 
     }
@@ -228,5 +239,4 @@ void serverDynamicResponse(int fd, char* filename, char* cgiArgs) {
         Execve(filename, (char* []) { filename, NULL }, environ);
     }
     Wait(NULL);
-
 }

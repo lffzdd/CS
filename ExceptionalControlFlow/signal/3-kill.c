@@ -5,7 +5,7 @@ int main(int argc, char const* argv[]) {
 
   if ((pid = Fork()) == 0) {
     printf("child started\n");
-    fflush(stdout);
+    fflush(fileout);
     pause(); // pause()函数使调用进程挂起直到有信号递达
     printf("control should never reach here!\nit should be terminated by a signal\n");
     exit(0);

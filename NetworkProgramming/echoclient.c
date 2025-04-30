@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
     while (Fgets(buf, MAXLINE, stdin) != NULL) { // 从标准输入中读取一行数据
         Rio_writen(clientfd, buf, strlen(buf)); // 将buf中的数据写入connfd中
         Rio_readlineb(&rio, buf, MAXLINE); // 从rio中读取一行数据,放入buf中
-        Fputs(buf, stdout); // 将buf中的数据输出到标准输出中
+        Fputs(buf, fileout); // 将buf中的数据输出到标准输出中
     }
     Close(clientfd); // 关闭连接
 

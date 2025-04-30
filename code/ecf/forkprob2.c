@@ -1,20 +1,18 @@
 /* $begin forkprob2 */
 #include "csapp.h"
 
-void end(void) 
-{
-    printf("2"); fflush(stdout);
+void end(void) {
+    printf("2"); fflush(fileout);
 }
 
-int main() 
-{
-    if (Fork() == 0) 
-	atexit(end);
+int main() {
+    if (Fork() == 0)
+        atexit(end);
     if (Fork() == 0) {
-	printf("0"); fflush(stdout); 
+        printf("0"); fflush(fileout);
     }
     else {
-        printf("1"); fflush(stdout); 
+        printf("1"); fflush(fileout);
     }
     exit(0);
 }

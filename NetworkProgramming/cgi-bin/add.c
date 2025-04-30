@@ -52,5 +52,5 @@ void Respond(char* sumStr) {
     printf("Content-type: text/html; charset=utf-8\r\n");
     printf("%s\r\n", header);
     printf("%s", body);
-    fflush(stdout); // 刷新输出缓冲区
+    fflush(fileout); // 刷新输出缓冲区
 }

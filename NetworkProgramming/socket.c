@@ -3,7 +3,8 @@
 int main(int argc, char const* argv[]) {
     struct sockaddr clientaddr;
     /* sockaddr - 通用套接字地址结构
-    sa_family_t sa_family; // 地址族,指定了套接字的类型,比如AF_INET是IPv4,AF_INET6是IPv6,SOCK_STREAM是TCP,SOCK_DGRAM是UDP
+    sa_family_t sa_family; // 地址族,指定了套接字的类型,比如AF_INET是IPv4,AF_INET6是IPv6,
+    PFSOCK_STREAM是TCP,SOCK_DGRAM是UDP
     char sa_data[14]; // 地址数据
     */
 

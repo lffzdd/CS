@@ -24,6 +24,7 @@
     "uv.h": "c",
     "netdb.h": "c",
     "features.h": "c",
-    "socket.h": "c"
+    "socket.h": "c",
+    "sbuf.h": "c"
   }
 }
